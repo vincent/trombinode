@@ -1,26 +1,138 @@
 <!DOCTYPE html>
+<!-- saved from url=(0046)http://bootstrapstyler.com/preview/_/adaptive/ -->
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>{{site_title}}</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive - Responsive Bootstrap Thme</title>
 
-  <link href="/bootstrap/css/bootstrap.min.css" media="all" rel="stylesheet" />
-  <link href="/bootstrap/css/bootstrap-responsive.min.css" media="all" rel="stylesheet" /></head>
+    <!-- BOOTSTRAPS -->
+    <link href="/themes/adaptive/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/themes/adaptive/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 
-<body lang="en">
+    <link href="/themes/adaptive/theme.css" rel="stylesheet">
+    <link href="/themes/adaptive/theme-responsive-767.css" rel="stylesheet">
+    <link href="/themes/adaptive/theme-responsive-768-979.css" rel="stylesheet">
+    <link href="/themes/adaptive/font-awesome.css" rel="stylesheet">
 
-  <header>
-  </header>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/gears.css" rel="stylesheet">
+  </head>
 
-  <div id="canvas">
-        {{{body}}}
-  </div>
+  <body>
+    <div class="header">
+      <div class="container">
 
-</body>
+        <div class="branding clearfix">
+          <h1 class="logo pull-left">
+            <a href="http://bootstrapstyler.com/preview/_/adaptive/index.html"><i class="icon-adjust"></i> Trombino</a>
+          </h1>
 
-<script src="/js/ios-orientationchange-fix.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script src="/bootstrap/js/bootstrap.min.js"></script>
+          <a class="btn btn-inverse nav-control hidden-desktop" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
 
+          <ul class="nav nav-collapse collapse pull-right">
+            <li class="active">
+              <a href="http://bootstrapstyler.com/preview/_/adaptive/index.html">Home</a>
+            </li>
+            <li>
+              <a href="http://bootstrapstyler.com/preview/_/adaptive/about.html">About</a>
+            </li>
+            <li>
+              <a href="http://bootstrapstyler.com/preview/_/adaptive/blog.html">Blog</a>
+            </li>
+            <li>
+              <a href="http://bootstrapstyler.com/preview/_/adaptive/contact.html">Contact</a>
+            </li>
+          </ul><!--/.nav -->
+        </div><!--/.branding -->
+
+      </div>
+    </div><!--/.header -->
+
+    {{{body}}}
+
+    <div class="footer">
+      <div class="container">
+        <div class="extras row">
+          <div class="span4 module about">
+            <h3>About</h3>
+            <p class="brief">Semper aenean tempor sit amet, ante. Aenean consectetur mi vitae est. Mauris placerat eleifend leo. Ultricies eget, tempor sit amet, ante.</p>
+            <p class="location">
+              <b class="icon"><i class="icon-map-marker"></i></b>
+              Boulevard Office, Midvalley City,<br>
+              52300 Kuala Lumpur, Malaysia<br>
+            </p>
+            <p class="phone">
+              <b class="icon"><i class="icon-phone"></i></b>
+              +012 - 345 6789
+            </p>
+            <p class="mail">
+              <b class="icon"><i class="icon-envelope"></i></b>
+              <a href="http://bootstrapstyler.com/preview/_/adaptive/#">support@plan-a.com</a>
+            </p>
+          </div>
+          <div class="span4 module twitter">
+            <h3>Built with</h3>
+            <ul class="unstyled">
+              <li class="tweet-row">
+                <div class="tweet-text">
+                  <a href="http://twitter.github.io/bootstrap/index.html" target="_blank">Bootstrap</a> by Twitter
+                </div>
+              </li>
+              <li class="tweet-row">
+                <div class="tweet-text">
+                  <a href="http://www.dropzonejs.com" target="_blank">Dropzonejs</a> by Matias Meno
+                </div>
+              </li>
+              <li class="tweet-row">
+                <div class="tweet-text">
+                  <a href="http://nodejs.org" target="_blank">NodeJS</a> by Joyent
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="span4 module newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter and get latest news and exclusive offers straight to your inbox. No spam, we promise.</p>
+            <form>
+              <input class="span4" type="text" placeholder="Your name">
+              <input class="span4" type="text" placeholder="Your email">
+              <button class="btn btn-orange" type="button">Subscribe</button>
+            </form>
+          </div>
+        </div><!--/.extras -->
+
+        <div class="copyright clearfix">
+          <ul class="nav pull-right">
+            <li>
+              <a href="http://bootstrapstyler.com/preview/_/adaptive/#">Follow us on Twitter</a>
+            </li>
+            <li>
+              <a href="http://bootstrapstyler.com/preview/_/adaptive/#">Like us on Facebook</a>
+            </li>
+          </ul>
+
+        </div>
+      </div><!--/.copyright -->
+    </div><!--/.footer -->
+
+    <!-- SPACE FOR SCRIPTS -->
+    <script src="/js/jquery-1.10.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/dropzone.js"></script>
+    <script src="/js/trombinode.js"></script>
+
+    <script type="text/javascript" src="/js/jspdf/jspdf.js"></script>
+    <script type="text/javascript" src="/js/jspdf/libs/Deflate/adler32cs.js"></script>
+    <script type="text/javascript" src="/js/jspdf/libs/FileSaver.js/FileSaver.js"></script>
+    <script type="text/javascript" src="/js/jspdf/libs/Blob.js/BlobBuilder.js"></script>
+    <script type="text/javascript" src="/js/jspdf/jspdf.plugin.addimage.js"></script>
+    <script type="text/javascript" src="/js/jspdf/jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="/js/jspdf/jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="/js/jspdf/jspdf.plugin.from_html.js"></script>
+  </body>
 </html>

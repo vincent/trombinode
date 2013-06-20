@@ -51,7 +51,7 @@ app.configure(function() {
 });
 
 //---- INTERNAL MODULES
-app.use(require('./lib/hello'));
+app.use(require('./lib/app'));
 app.use(require('./lib/routes'));
 
 //--- End of Internal modules

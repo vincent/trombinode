@@ -13,13 +13,17 @@ Trombinode.prototype.removeImage = function(face_image_id) {
 Trombinode.prototype.onSuccess = function(id, response) {
   if (response && response.faces && response.faces.length > 0) {
     Trombinode.faces = [];
-    $('.call-action').append('<ul class="persons">'
+    $('.call-action').append(
+      '<input class="person_bigtitle" name="title" id="title" placeholder="' + 'Titre du trombi' + '"/>'
+      + '<ul class="persons">'
       + $.map(response.faces, function(face){
         Trombinode.faces.push(face);
         return '<li id="' + face.face_image_id + '" class="clearfix">'
           + '<img src="' + face.data + '">'
-          + '<input size="20" id="person' + face.num + '" name="person[' + face.num + ']" type="text" class="person"><br/>'
-          + '<input size="30" id="person_title' + face.num + '" name="person_title[' + face.num + ']" type="text" class="person_title"><br/>'
+          + '<input size="20" id="person' + face.num + '" name="person[' + face.num + ']" type="text" class="person" placeholder="' + 'Prénom Nom' + '">'
+          + '<br/>'
+          + '<input size="30" id="person_title' + face.num + '" name="person_title[' + face.num + ']" type="text" class="person_title" placeholder="' + 'Titre' + '">'
+          + '<br/>'
           + '<a class="action" href="#" onclick="Trombinode.removeImage(\'' + face.face_image_id + '\'); return false;">supprimer cette image</a>'
           + '</li>';
       }).join('')
@@ -72,15 +76,31 @@ Trombinode.prototype.initUploader = function() {
 
 Trombinode.prototype.buildPDF = function() {
   var doc = new jsPDF();
-  doc.setFontSize(40);
-  for (var i=0; i < Trombinode.faces.length; i++) {
+  doc.setFontSize(50);
+  // Add title
+  doc.text(10, 20, $('.person_bigtitle').val());
+  // Add each selected persons
+  $('.persons li').each(function(i, el){
+    el = $(el);
+
+    // Add a new page on modulo 7
+    if (i % 7) {
+      // doc.addPage();
+    }
+
     var x = 10,
-          y_image = (30 * (i+1)) + 10,
-          y_text = (30 * (i+1)) + 25;
-    doc.text(x + 30, y_text, $('#person'+i).val());
-    doc.addImage(Trombinode.faces[i].data, 'JPEG', x, y_image, 25, 25);
-  };
-  //doc.save('Test.pdf');
+          y_image = (32 * (i+1)) + 10,
+          y_text = (32 * (i+1)) + 25;
+    // Name
+    doc.setFontSize(40);
+    doc.text(x + 30, y_text, $('.person', el).val());
+    // Title
+    doc.setFontSize(20);
+    doc.text(x + 30, y_text + 10, $('.person_title', el).val());
+    // Photo
+    doc.addImage($('img', el).attr('src'), 'JPEG', x, y_image, 25, 25);
+  });
+  // Direct output
   doc.output('datauri');
 };
 

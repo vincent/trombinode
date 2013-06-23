@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- saved from url=(0046)http://bootstrapstyler.com/preview/_/adaptive/ -->
-<html lang="en">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adaptive - Responsive Bootstrap Thme</title>
+    <title class="t">Trombino - Créez vos trombinoscopes</title>
 
     <!-- BOOTSTRAPS -->
     <link href="/themes/adaptive/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -25,7 +25,7 @@
 
         <div class="branding clearfix">
           <h1 class="logo pull-left">
-            <a href="http://bootstrapstyler.com/preview/_/adaptive/index.html"><i class="icon-adjust"></i> Trombino</a>
+            <a href="/"><i class="icon-adjust"></i> Trombino</a>
           </h1>
 
           <a class="btn btn-inverse nav-control hidden-desktop" data-toggle="collapse" data-target=".nav-collapse">
@@ -36,16 +36,10 @@
 
           <ul class="nav nav-collapse collapse pull-right">
             <li class="active">
-              <a href="http://bootstrapstyler.com/preview/_/adaptive/index.html">Home</a>
+              <a href="#top">Home</a>
             </li>
             <li>
-              <a href="http://bootstrapstyler.com/preview/_/adaptive/about.html">About</a>
-            </li>
-            <li>
-              <a href="http://bootstrapstyler.com/preview/_/adaptive/blog.html">Blog</a>
-            </li>
-            <li>
-              <a href="http://bootstrapstyler.com/preview/_/adaptive/contact.html">Contact</a>
+              <a href="#about" class="t">A propos</a>
             </li>
           </ul><!--/.nav -->
         </div><!--/.branding -->
@@ -59,60 +53,52 @@
       <div class="container">
         <div class="extras row">
           <div class="span4 module about">
-            <h3>About</h3>
-            <p class="brief">Semper aenean tempor sit amet, ante. Aenean consectetur mi vitae est. Mauris placerat eleifend leo. Ultricies eget, tempor sit amet, ante.</p>
+            <a name="about"></a>
+            <h3 class="t">A propos</h3>
+            <p class="brief" class="t">Trombino est une expérimentation du framework NodeJS</p>
             <p class="location">
-              <b class="icon"><i class="icon-map-marker"></i></b>
-              Boulevard Office, Midvalley City,<br>
-              52300 Kuala Lumpur, Malaysia<br>
-            </p>
-            <p class="phone">
-              <b class="icon"><i class="icon-phone"></i></b>
-              +012 - 345 6789
+              <b class="icon"><i class="icon-user"></i></b>
+              <a href="http://careers.stackoverflow.com/vincentlark" target="_blank">Vincent Lark</a>
             </p>
             <p class="mail">
               <b class="icon"><i class="icon-envelope"></i></b>
-              <a href="http://bootstrapstyler.com/preview/_/adaptive/#">support@plan-a.com</a>
+              <a href="mailto:vincent.lark@gmail.com">vincent.lark@gmail.com</a>
             </p>
           </div>
           <div class="span4 module twitter">
-            <h3>Built with</h3>
+            <h3 class="t">Fabriqué avec</h3>
             <ul class="unstyled">
               <li class="tweet-row">
                 <div class="tweet-text">
-                  <a href="http://twitter.github.io/bootstrap/index.html" target="_blank">Bootstrap</a> by Twitter
+                  <a href="http://twitter.github.io/bootstrap/index.html" target="_blank">Bootstrap</a> <span class="t">par</span> Twitter
                 </div>
               </li>
               <li class="tweet-row">
                 <div class="tweet-text">
-                  <a href="http://www.dropzonejs.com" target="_blank">Dropzonejs</a> by Matias Meno
+                  <a href="http://www.dropzonejs.com" target="_blank">Dropzonejs</a> <span class="t">par</span> Matias Meno
                 </div>
               </li>
               <li class="tweet-row">
                 <div class="tweet-text">
-                  <a href="http://nodejs.org" target="_blank">NodeJS</a> by Joyent
+                  <a href="http://nodejs.org" target="_blank">NodeJS</a> <span class="t">par</span> Joyent
                 </div>
               </li>
             </ul>
           </div>
           <div class="span4 module newsletter">
-            <h3>Newsletter</h3>
-            <p>Subscribe to our newsletter and get latest news and exclusive offers straight to your inbox. No spam, we promise.</p>
-            <form>
-              <input class="span4" type="text" placeholder="Your name">
-              <input class="span4" type="text" placeholder="Your email">
-              <button class="btn btn-orange" type="button">Subscribe</button>
-            </form>
+            <h3>Disclaimer</h3>
+            <p class="t">Ce service est proposé "tel quel", sans aucune garantie. Si vous rencontrez un bug, ou vous souhaiteriez une nouvelle fonctionnalité, écrivez moi.</p>
+            <p><a href="mailto:vincent.lark@gmail.com">vincent.lark@gmail.com</a></p>
           </div>
         </div><!--/.extras -->
 
         <div class="copyright clearfix">
           <ul class="nav pull-right">
             <li>
-              <a href="http://bootstrapstyler.com/preview/_/adaptive/#">Follow us on Twitter</a>
+              <a href="http://twitter.com/allyouneedisgnu" target="_blank"><i class="icon-twitter"></i>&nbsp;<span class="t">Suivez-moi sur Twitter</span></a>
             </li>
             <li>
-              <a href="http://bootstrapstyler.com/preview/_/adaptive/#">Like us on Facebook</a>
+              <a href="http://github.com/vincent" target="_blank"><i class="icon-github"></i>&nbsp;<span class="t">ou Github</span></a>
             </li>
           </ul>
 
@@ -125,6 +111,15 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/dropzone.js"></script>
     <script src="/js/trombinode.js"></script>
+
+    <script src="/js/translations.js"></script>
+    <script type="text/javascript">
+      (function(lang) {
+        $('.t').each(function(i, el) {
+          $(el).html(_t(el.innerHTML, lang));
+        });
+      })('{{language}}');
+    </script>
 
     <script type="text/javascript" src="/js/jspdf/jspdf.js"></script>
     <script type="text/javascript" src="/js/jspdf/libs/Deflate/adler32cs.js"></script>

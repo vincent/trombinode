@@ -2,6 +2,11 @@
   padding: 40px 0;
 }
 
+.splash .headline,
+.container .call-action {
+  text-align: center;
+}
+
 .splash .headline p {
   font-size: 16px;
 }
@@ -14,8 +19,16 @@
   opacity: 1;
 }
 
+.feature-brief .test {
+  visibility: hidden;
+}
+.feature-brief:hover .test {
+  visibility: visible;
+}
+
 input.person,
-input.person_title {
+input.person_title,
+input.person_bigtitle {
   font-size: 30px;
   margin-left: 10px;
   line-height: 50px;
@@ -27,6 +40,12 @@ input.person_title {
   width: auto;
   float: right;
 }
+input.person_bigtitle {
+  float: none;
+  width: 100%;
+  margin: 30px auto;
+  max-width: 550px;
+}
 input.person_title {
   font-size: 18px;
   line-height: 25px;
@@ -34,6 +53,8 @@ input.person_title {
 
 .persons {
   list-style-type: none;
+  max-width: 550px;
+  margin: 0 auto;
 }
 .persons li {
   margin: 10px 0;
@@ -59,6 +80,12 @@ input.person_title {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 0;
+}
+
+@media (max-width: 767px) {
+  #uploader {
+    max-width: 255px;
+  }
 }
 
 .icon-dropzonejs {

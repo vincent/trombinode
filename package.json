@@ -20,7 +20,7 @@
     "less-middleware": "",
     "underscore": "1.x",
     "opencv": "~7.0.0",
-    "gm": "~1.9.1",
+    "gm": "~1.23.1",
     "async": "~0.2.9"
   }
 }
